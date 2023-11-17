@@ -1,0 +1,15 @@
+import sqlite3
+resp= int(input("digite o rgm do aluno que deseja alterar"))
+nome = input("digite o nome: ")
+idade = int(input("digite a idade: "))
+altura = float(input("digite a altura (metros): "))
+peso = float(input("digite o peso: "))
+ID = int(input("digite o numero id: "))
+RGM = input("digite o RGM do aluno: ")
+
+conexao = sqlite3.connect('ModuloAcad.db')
+cursor = conexao.cursor()
+cursor.execute("UPDATE ALUNOS SET NOME = '"+nome+"', IDADE = "+str(idade)+", ALTURA = "+str(altura)+", PESO = "+str(peso)+", RGM = "+str(RGM)+", ID_ALUNO = "+str(ID)+" WHERE RGM = "+str(resp)+";")
+conexao.commit()
+conexao.close()
+print("comando Inserido!!! ")
