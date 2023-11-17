@@ -1,20 +1,18 @@
-"""receba o nome e a nota de cada aluno(a) até receber uma informação de finalização pelo usuário; - guarde 
-estes valores em uma lista, calcule e mostre: a média, aluno(a) com maior nota e aluno
-(a) com menor nota."""
-esc="S"
-rep=0
-notas=[]
-alunos=[]
-while esc!="N":
-    notas.append(input("digite o nome do aluno"))
-    notas.append(float(input("digite a nota")))
-    alunos.append(notas[:])
-    notas.clear()
-    rep=rep+1 
-    esc=input("Quer continuar? S-Sim ou N-Não ").upper()
-    while esc!="S" and esc!="N":
-        esc=input("Quer continuar? S-Sim ou N-Não ").upper()
-todos=sum(alunos)
-for cont in range(rep):
-    media=todos/rep
-    print(media)        
+"""Altere o programa anterior, intercalando 3 vetores de n elementos cada em um vetor de tamanho 3*N"""
+import random
+lista1=[]
+lista2=[]
+lista3=[]
+lista4=[]
+esc=int(input("digite quantos números deseja ter nas listas: "))
+for cont in range(esc):
+    lista1.append(random.randrange(0,100))
+for cont in range(esc):    
+    lista2.append(random.randrange(0,100))
+for cont in range(esc):    
+    lista3.append(random.randrange(0,100))    
+for cont2 in range(esc):
+    lista4.append(lista1[cont2])
+    lista4.append(lista2[cont2])
+    lista4.append(lista3[cont2])
+print(f"O vetor com os elementos intercalados dos vetores 1, 2 e 3 é: {lista4}")

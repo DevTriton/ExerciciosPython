@@ -1,7 +1,11 @@
-"""Elaborar um programa que leia uma lista que contenha 20 números inteiros e em seguida o programa deve exibir o maior e o menor número."""
+"""Elabore  um  programa  que receba  a  temperatura  média  de  cada  mês  do  ano  e armazene-as  em  uma  lista.  Após  isto,  calcule  a  média  anual  das  temperaturas  e  mostre todas as temperaturas acima da média anual, e em que mês elas ocorreram (mostrar o mês por extenso: 1 Janeiro, 2 Fevereiro, etc.)."""
 lista=[]
-for cont in range(20):
-    lista.append(int(input(f"digite o {cont+1} numero")))
-maior=max(lista)
-menor=min(lista)    
-print(f"o maior numero é {maior} e o menor é {menor}")
+lista2=["Janeiro", "fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+lista3=[]
+for cont in range (12):
+    lista.append(float(input(f"digite a temperatura média do mês {cont+1} ")))
+media=(sum(lista[:]))/12
+for cont2 in range (12):
+    if lista[cont2]>media:
+        lista3.append(lista2[cont2])
+print(lista3)

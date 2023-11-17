@@ -1,59 +1,27 @@
-print("exercicios com lista")
-lista=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-num=[]
-"""intervalo de 1 a 9"""
-print(f"{lista[1:10]}")
-print("-"*30)
-"""intervalo de 8 a 13"""
-print(f"{lista[8:14]}")
-print("-"*30)
-"""numeros pares"""
-for cont in range (len(lista)):
-    if lista[cont]%2==0:
-        num.append(lista[cont])
-print(num)
-num.clear() 
-print("-"*30)  
-"""numeros impares"""
-for cont1 in range(len(lista)):
-    if lista[cont1]%2!=0:
-        num.append(lista[cont1])
-print(num)
-num.clear()
-print("-"*30)
-"""multiplos de 2, 3 e 4"""  
-for cont3 in range(len(lista)):
-    if lista[cont3]%2==0:
-        num.append(lista[cont3])
-print(num)
-num.clear()
-print("-"*30)    
-for cont3 in range(len(lista)):
-    if lista[cont3]%3==0:
-        num.append(lista[cont3])
-print(num)
-num.clear() 
-print("-"*30) 
-for cont3 in range(len(lista)):
-    if lista[cont3]%4==0:
-        num.append(lista[cont3])
-print(num)
-num.clear()
-print("-"*30) 
-"""lista reversa"""  
-for cont4 in range(len(lista)-1,0,-1):
-    num.append(cont4)
-print(num)  
-num.clear()
-print("-"*30)
-"""soma do intervalo de 10 a 15"""
-soma=sum(lista[10:16]) 
-print(soma)
-print("-"*30)
-"""uma lista com um novo elemento"""
-lista.append(16)
-print(lista)
-print("-"*30)
-"""substituir o elemento com indice 6"""
-lista.insert(6,17)
-print(lista)
+"""Altera o programa anterior e permita que o usuário salve o resultado da pesquisa em um  arquivo  texto  (formato  txt).(obs.:  faça  o  download  do  arquivo  texto  e  abra-o  na  sua máquina, utilizando o notepad, para ver se ele está correto.)"""
+lista=[]
+lista2=[]
+resp="S"
+n=0
+esc=int(input("digite quantos alunos serão cadastrados "))
+for cont in range(esc):
+    lista.append(int(input(f"digite a idade do {cont+1} aluno: ")))
+    lista2.append(float(input(f"digite a altura do {cont+1} aluno: ")))
+altm=sum(lista2[:])/esc
+resp=input("voçê quer consultar quantos alunos de mais de 13 anos estão abaixo da média de altura? S-Sim N-Não ").upper()
+while resp!="S" and resp!="N":
+    resp=input("por favor digite S-Sim ou N-Não ").upper()
+if resp=="S":
+    for cont in range(esc):
+        if lista[cont]<=13:    
+            if lista2[cont]<altm:
+                n=n+1
+
+print(f"o número de alunos abaixo da média é {n} ")                    
+resp2=input("voçê quer salvar o resultado em um arquivo .txt? S-Sim N-Não ").upper()
+while resp2!="S" and resp2!="N":
+    resp2=input("por favor digite S-Sim ou N-Não ").upper()
+if resp2=="S":    
+    arquivo = open('1.txt','w')
+    arquivo.write(f"o numero de alunos abaixo da media é: {n}\n")
+    arquivo.close()    

@@ -1,15 +1,12 @@
-"""elabore um programa que recebe um texto, fornecido pelo user e verifica se o texto é um anagrama"""
-texto=input("digite o texto ")
-j=len(texto)-1
-x = 0
-print(range(0, len(texto)-1))
-for cont in range(0, len(texto)-1):
-    if texto[cont]!=texto[j]:
-        print("cont: ", cont, " j: ", j)
-        print("não é")
-        x =1
-        break
-    j=j-1
-
-if x ==0:
-    print("sua palavra é um anagrama")    
+"""Elabore um programa que gere um vetor(lista em python)A com n números inteiros aleatórios, calcule e mostre a soma dos quadrados dos elementos do vetor."""
+import random
+lista=[]
+lista2=[]
+esc=int(input("digite quantos numeros deseja gerar para a lista: "))
+for cont in range(esc):
+    lista.append(random.randrange(0,100))
+for cont2 in range(esc):
+    lista2.append(lista[cont2] * lista[cont2])
+soma=sum(lista2[:])
+print(lista, lista2)
+print(f"a soma dos quadrados é: {soma}")    

@@ -1,21 +1,19 @@
-fun2500=0
-fun1300=0
-total=0
-N=int(input("digite o numero de funcionarios: "))
-while N<=0:
-    print("erro")
-    N=int(input("digite o numero de funcionarios: "))
-for cont in range(N):
-    sal=float(input(f"digite o {cont+1} salario"))
-    while sal<=0:
-        print("erro")
-        sal=float(input(f"digite o {cont+1} salario"))
-    total=total+sal    
-    if sal>2500:
-        fun2500=fun2500+1
-    else:
-        if sal<1300:
-            fun1300=fun1300+1
-perc=(fun1300*N)/100
-media=total/N
-print(f"o total é {total}, a quantidade de funcionarios que recebem mais de 2500 são {fun2500}, a média é {media} e o percentual de pessoas que recebem menos que 1300 é {perc}")
+"""Elabore um programa que leia as idades e alturas de n alunos, na fase de cadastro. Depois o programa deve fornecer a opção de consulta, que deve avaliar a quantidade de alunos com mais de 13 anos que possuem altura inferior à média de altura dos demais alunos."""
+lista=[]
+lista2=[]
+resp="S"
+n=0
+esc=int(input("digite quantos alunos serão cadastrados "))
+for cont in range(esc):
+    lista.append(int(input(f"digite a idade do {cont+1} aluno: ")))
+    lista2.append(float(input(f"digite a altura do {cont+1} aluno: ")))
+altm=sum(lista2[:])/esc
+while resp!="N":
+    resp=input("voçê quer consultar quantos alunos de mais de 13 anos estão abaixo da média de altura? S-Sim N-Não ").upper()
+    while resp!="S" and resp!="N":
+        resp=input("por favor digite S-Sim ou N-Não ").upper()
+    for cont in range(esc):
+        if lista[cont]<=13:    
+            if lista2[cont]<altm:
+                n=n+1    
+    print(f"o número de alunos abaixo da média é {n} ")

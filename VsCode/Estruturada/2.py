@@ -1,11 +1,14 @@
-lista=[]
+"""Elabore um programa que gere dois vetores(lista em python) com n números inteiros aleatórios cada, Gere  um  terceiro  vetor  de  2*N elementos,  cujos  valores  deverão  ser compostos pelos elementos intercalados dos dois outros vetores. """
+import random
+lista1=[]
 lista2=[]
 lista3=[]
-p=int(input("quantas pessoas deseja consultar? "))
-anoa=int(input("digite o ano atual: "))
-for cont in range(p):
-    lista.append(int(input(f"digite o ano de nascimento da {cont+1} pessoa")))
-    lista2.append(anoa-lista[cont])
-    lista3.append(2050-lista[cont])
-print(f" a idade das pessoas é: {lista2}")
-print(f" e e 2050 elas terão: {lista3}")    
+esc=int(input("digite quantos números deseja ter nas listas: "))
+for cont in range(esc):
+    lista1.append(random.randrange(0,100))
+for cont in range(esc):    
+    lista2.append(random.randrange(0,100))
+for cont2 in range(esc):
+    lista3.append(lista1[cont2])
+    lista3.append(lista2[cont2])
+print(f"O vetor com os elementos intercalados dos vetores 1 e 2 é: {lista3}")
